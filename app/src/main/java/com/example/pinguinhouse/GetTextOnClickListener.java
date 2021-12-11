@@ -2,6 +2,8 @@ package com.example.pinguinhouse;
 
 import android.view.View;
 
+import java.net.HttpURLConnection;
+
 class GetTextOnClickListener implements View.OnClickListener{
     private SearchActivity searchActivity;
 

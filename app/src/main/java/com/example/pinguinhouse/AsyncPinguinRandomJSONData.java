@@ -37,6 +37,7 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
         }
         try {
             urlConnection = (HttpURLConnection) url.openConnection(); // Open
+            urlConnection.setRequestProperty("Accept", "application/json");
             Log.i("JFL", "in second try");
         } catch (IOException e) {
             e.printStackTrace();
