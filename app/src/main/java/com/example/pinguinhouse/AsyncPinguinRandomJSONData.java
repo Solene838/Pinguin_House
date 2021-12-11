@@ -49,6 +49,8 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
             e.printStackTrace();
         }
         result = readStream(in); // Read stream
+        Log.i("JFL", "results: " + result);
+        //ici on a bien le json attendu dans la variable result
         urlConnection.disconnect();
         JSONObject json = null;
         try {
@@ -56,13 +58,14 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Log.i("JFL", "JSON data in async inBackgd: " + json);
         return json; // returns the result
 
     }
 
     @Override
     protected void onPostExecute(JSONObject j) {
-        Log.i("JFL", "JSON data: " + j);
+        Log.i("JFL", "JSON data in async PostExec: " + j);
     }
 
     private String readStream(InputStream is) {

@@ -14,7 +14,7 @@ class GetTextOnClickListener implements View.OnClickListener{
     public void onClick(View v) {
 
         //searching Dan Brown
-        String url = new String("https://reststop.randomhouse.com/resources/authors/3446/");
+        String url = "https://reststop.randomhouse.com/resources/authors/3446/";
 
         AsyncPinguinRandomJSONData task = new AsyncPinguinRandomJSONData(searchActivity);
         task.execute(url);

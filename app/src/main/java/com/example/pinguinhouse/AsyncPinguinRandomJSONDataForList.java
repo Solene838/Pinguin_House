@@ -18,15 +18,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AsyncPinguinRandomJSONDataForList extends AsyncTask<String, Void, JSONObject> {
-    private AppCompatActivity myActivity;
     private MyAdapter adapter;
 
     public AsyncPinguinRandomJSONDataForList(MyAdapter myAdapter) {
             this.adapter = adapter;
-    }
-
-    public void AsyncCardJSONData(AppCompatActivity myActivity_){
-        myActivity = myActivity_;
     }
 
 
@@ -69,7 +64,7 @@ public class AsyncPinguinRandomJSONDataForList extends AsyncTask<String, Void, J
     @Override
     protected void onPostExecute(JSONObject j) {
         if (j != null) {
-            Log.i("JFL", "JSON data: " + j);
+            Log.i("JFL", "JSON data in async list: " + j);
             try {
                 JSONArray array = j.getJSONArray("items");
                 for (int i=0; i < array.length(); i++) {
