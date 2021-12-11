@@ -38,14 +38,12 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
         try {
             urlConnection = (HttpURLConnection) url.openConnection(); // Open
             Log.i("JFL", "in second try");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         InputStream in = null;
         try {
             in = new BufferedInputStream(urlConnection.getInputStream());
@@ -53,7 +51,6 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         result = readStream(in); // Read stream
         urlConnection.disconnect();
         JSONObject json = null;
