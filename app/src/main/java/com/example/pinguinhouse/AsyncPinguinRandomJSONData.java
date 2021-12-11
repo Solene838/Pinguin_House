@@ -54,11 +54,12 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
         urlConnection.disconnect();
         JSONObject json = null;
         try {
+            Log.i("JFL", "in fourth try");
             json = new JSONObject(result);
+            Log.i("JFL", "JSON data in async inBackgd: " + json);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.i("JFL", "JSON data in async inBackgd: " + json);
         return json; // returns the result
 
     }
