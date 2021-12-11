@@ -1,9 +1,11 @@
 package com.example.pinguinhouse;
 
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.Vector;
 
@@ -31,7 +33,10 @@ public class MyAdapter extends BaseAdapter {
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.support_simple_spinner_dropdown_item, viewGroup, false);
+        TextView tv = (TextView) v.findViewById(R.id.tv);
+        tv.setText(vector.get(i));
+        return v;
         Log.i("JFL", "TODO");
-        return null;
     }
 }

@@ -72,6 +72,7 @@ public class AsyncPinguinRandomJSONDataForList extends AsyncTask<String, Void, J
                     Log.i("JFL", "Adding to adapter url : " + text_url);
                     adapter.add(text_url);
                     }
+                adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                 e.printStackTrace();
                 }
