@@ -13,7 +13,7 @@ class GetTextOnClickListener implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-        //searching Tolkien
+        //searching Dan Brown
         String url = new String("https://reststop.randomhouse.com/resources/authors/3446/");
 
         AsyncPinguinRandomJSONData task = new AsyncPinguinRandomJSONData(searchActivity);

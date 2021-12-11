@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,10 +17,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObject> {
+public class AsyncPinguinRandomJSONDataForList extends AsyncTask<String, Void, JSONObject> {
     private AppCompatActivity myActivity;
+    private MyAdapter adapter;
 
-    public AsyncPinguinRandomJSONData(AppCompatActivity myActivity_) {
+    public AsyncPinguinRandomJSONDataForList(MyAdapter myAdapter) {
+            this.adapter = adapter;
+    }
+
+    public void AsyncCardJSONData(AppCompatActivity myActivity_){
         myActivity = myActivity_;
     }
 
@@ -62,7 +68,25 @@ public class AsyncPinguinRandomJSONData extends AsyncTask<String, Void, JSONObje
 
     @Override
     protected void onPostExecute(JSONObject j) {
-        Log.i("JFL", "JSON data: " + j);
+        if (j != null) {
+            Log.i("JFL", "JSON data: " + j);
+            try {
+                JSONArray array = j.getJSONArray("items");
+                for (int i=0; i < array.length(); i++) {
+                    String text_url = array.getJSONObject(i).getJSONObject("media").getString("m");
+                    Log.i("JFL", "Adding to adapter url : " + text_url);
+                    adapter.add(text_url);
+                    }
+                } catch (JSONException e) {
+                e.printStackTrace();
+                }
+        }
+        else
+        {
+            Log.i("JFL", "The JSON data are null");
+
+        }
+
     }
 
     private String readStream(InputStream is) {
