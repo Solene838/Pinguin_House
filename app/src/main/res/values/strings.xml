@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Pinguin House</string>
+    <string name="my_bookmarks">My bookmarks</string>
+    <string name="search">Search</string>
+    <string name="my_search_history">My search history</string>
+    <string name="pinguin">pinguin</string>
+    <string name="search_by">SEARCH BY ...</string>
+    <string name="author">Author :</string>
+    <string name="enter_an_author_name">Enter an author name</string>
+    <string name="work">Work :</string>
+    <string name="enter_a_work_here">Enter a work here</string>
+    <string name="title">Title :</string>
+    <string name="enter_a_title_here">Enter a title here</string>
+    <string name="event">Event :</string>
+    <string name="enter_an_author_here">Enter an author here</string>
+    <string name="img_of_pinguin_search">img of pinguin search</string>
+    <string name="search_author_btn">search author btn</string>
+    <string name="btn_search_author">btn search author</string>
+    <string name="btn_search_work">btn search work</string>
+    <string name="btn_title_search">btn title search</string>
+    <string name="btn_search_event">btn search event</string>
+    <string name="btn_search_title">btn search title</string>
+    <string name="what_you_have_searched_before">What you have searched before :</string>
+</resources>

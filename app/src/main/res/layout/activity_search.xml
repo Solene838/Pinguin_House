@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+
+    <TextView
+        android:id="@+id/textSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_by"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textAuthor"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/author"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textSearch" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputAuthor"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/enter_an_author_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btnAuthorSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="408dp"
+        android:contentDescription="@string/btn_search_author"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/index1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textWork"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/work"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAuthor" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputWork"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/enter_a_work_here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAuthor"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btnWorkSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="308dp"
+        android:contentDescription="@string/btn_search_work"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/index1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textWork" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputTitle"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/enter_a_title_here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputWork"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btnTitleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="@string/btn_search_title"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/index1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textEvent"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/event"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputEvent"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/enter_an_author_here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTitle"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/btnEventSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="@string/btn_search_event"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/index1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageView
+        android:id="@+id/imgPingSearch"
+        android:layout_width="118dp"
+        android:layout_height="109dp"
+        android:contentDescription="@string/img_of_pinguin_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pinguin" />
+</androidx.constraintlayout.widget.ConstraintLayout>
