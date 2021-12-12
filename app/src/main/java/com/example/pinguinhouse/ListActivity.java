@@ -14,8 +14,15 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         Log.i("JFL", "in OnCreate ListActivity");
 
+        Bundle extras = getIntent().getExtras();
+        String info = extras.getString("authorKey");
+        Log.i("JFL", "info: " + info);
+
         MyAdapter adapter = new MyAdapter();
         ListView l = (ListView)findViewById(R.id.listResults);
+
+        String url_mod = new String("https://reststop.randomhouse.com/resources/authors?lastName=" + info);
+        Log.i("JFL", "url_mod: " + url_mod);
 
         String url = "https://reststop.randomhouse.com/resources/authors/3446/";
 

@@ -39,6 +39,7 @@ public class SearchActivity extends AppCompatActivity {
                 String output2 = instant.toString();
                 mydb.insertData(output1,output2);
                 Intent intent = new Intent(v.getContext(), ListActivity.class);
+                intent.putExtra("authorKey", output1);
                 v.getContext().startActivity(intent);
 
             }
