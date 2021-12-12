@@ -21,8 +21,10 @@
     <string name="btn_search_event">btn search event</string>
     <string name="btn_search_title">btn search title</string>
     <string name="what_you_have_searched_before">What you have searched before :</string>
-    <string name="button">Button</string>
     <string name="enter_an_athor_firstname_here">Enter an athor firstname here</string>
     <string name="last_name">Last name</string>
     <string name="first_name">First name</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
+    <string name="bookmark">Bookmark</string>
 </resources>
