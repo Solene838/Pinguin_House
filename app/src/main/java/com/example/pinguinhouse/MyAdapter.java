@@ -16,16 +16,17 @@ public class MyAdapter extends BaseAdapter {
     public void add(String url) {
         Log.i("JFL", "in adapter add");
         vector.add(url);
+        Log.i("JFL", "vector: " + vector);
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return vector.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return vector.toArray()[position];
     }
 
     @Override
@@ -33,11 +34,12 @@ public class MyAdapter extends BaseAdapter {
         return 0;
     }
 
+    @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         Log.i("JFL", "in adapter view");
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_list, viewGroup, false);
         TextView tv = (TextView) v.findViewById(R.id.tv);
-        tv.setText(vector.get(i));
+        tv.setText(vector.get(i).toString());
         Log.i("JFL", "TODO");
         return v;
     }
