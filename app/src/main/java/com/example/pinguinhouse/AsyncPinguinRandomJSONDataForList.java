@@ -68,11 +68,11 @@ public class AsyncPinguinRandomJSONDataForList extends AsyncTask<String, Void, J
             Log.i("JFL", "JSON data in async list: " + j);
             try {
                 for(int k=0; k<1; k++) {
-                    String text_url = j.getString("@uri");
+                    String text_url = j.getJSONArray("author").getJSONObject(0).getString("@uri");
                     Log.i("JFL", "Adding to adapter url : " + text_url);
-                    String text_search = j.getString("authordisplay");
+                    String text_search = j.getJSONArray("author").getJSONObject(2).getString("authordisplay");
                     Log.i("JFL", "search: " + text_search);
-                    String text_description = j.getString("spotlight");
+                    String text_description = j.getJSONArray("author").getJSONObject(0).getString("spotlight");
                     Log.i("JFL", "description :" + text_description);
                     adapter.add(text_url);
                 }

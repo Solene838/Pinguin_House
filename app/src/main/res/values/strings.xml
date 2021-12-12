@@ -22,4 +22,5 @@
     <string name="btn_search_title">btn search title</string>
     <string name="what_you_have_searched_before">What you have searched before :</string>
     <string name="button">Button</string>
+    <string name="enter_an_athor_firstname_here">Enter an athor firstname here</string>
 </resources>

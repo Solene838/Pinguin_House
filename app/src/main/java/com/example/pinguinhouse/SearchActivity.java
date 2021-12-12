@@ -31,15 +31,23 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i("JFL", "in OnClick function");
-                EditText var1 = (EditText) findViewById(R.id.inputAuthor);
-                Log.i("JFL", String.valueOf(var1.getText()));
-                String output1 = String.valueOf(var1.getText());
+                EditText lastName = (EditText)findViewById(R.id.inputAuthor);
+                String mid1 = String.valueOf(lastName.getText());
+                Log.i("JFL", "mid1: "+ mid1);
+                EditText firstName = (EditText)findViewById(R.id.inputAuthorbis);
+                String mid2 = String.valueOf(firstName.getText());
+                Log.i("JFL", "mid2: "+ mid2);
+
+                String output1 = new String(mid1+ " " + mid2);
                 Log.i("JFL", "output1 = "+output1);
+
                 Instant instant = Instant.now();
-                String output2 = instant.toString();
-                mydb.insertData(output1,output2);
+                String output3 = instant.toString();
+
+                mydb.insertData(output1,output3);
                 Intent intent = new Intent(v.getContext(), ListActivity.class);
-                intent.putExtra("authorKey", output1);
+                intent.putExtra("authorLastName", mid1);
+                intent.putExtra("authorFirstName", mid2);
                 v.getContext().startActivity(intent);
 
             }
