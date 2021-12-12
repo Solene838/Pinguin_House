@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PinguinHouse">
         <activity
+            android:name=".ListActivityTitle"
+            android:exported="false" />
+        <activity
             android:name=".ListActivityWork"
             android:exported="false" />
         <activity

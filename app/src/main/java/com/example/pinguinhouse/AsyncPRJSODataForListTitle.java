@@ -14,36 +14,36 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AsyncPRJSONDataForListWork extends AsyncTask<String, Void, JSONObject> {
+public class AsyncPRJSODataForListTitle extends AsyncTask<String, Void, JSONObject> {
     private MyAdapter adapter;
 
-    public AsyncPRJSONDataForListWork(MyAdapter myAdapter) {
+    public AsyncPRJSODataForListTitle(MyAdapter myAdapter) {
         this.adapter = myAdapter;
     }
 
 
     protected JSONObject doInBackground(String... strings) {
-        Log.i("work", "in doInBackground");
+        Log.i("title", "in doInBackground");
         URL url = null;
         HttpURLConnection urlConnection = null;
         String result = null;
         try {
             url = new URL(strings[0]);
-            Log.i("work", "in first try");
+            Log.i("title", "in first try");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         try {
             urlConnection = (HttpURLConnection) url.openConnection(); // Open
             urlConnection.setRequestProperty("Accept", "application/json");
-            Log.i("work", "in second try");
+            Log.i("title", "in second try");
         } catch (IOException e) {
             e.printStackTrace();
         }
         InputStream in = null;
         try {
             in = new BufferedInputStream(urlConnection.getInputStream());
-            Log.i("work", "in third try");
+            Log.i("title", "in third try");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,23 +62,19 @@ public class AsyncPRJSONDataForListWork extends AsyncTask<String, Void, JSONObje
     @Override
     protected void onPostExecute(JSONObject j) {
         if (j != null) {
-            Log.i("work", "JSON data in async list: " + j);
+            Log.i("title", "JSON data in async list: " + j);
             try {
                 for(int k=0; k<1; k++) {
-                    String text_url = j.getJSONArray("work").getJSONObject(0).getString("@uri");
-                    Log.i("work", "url : " + text_url);
-                    String text_author_name = j.getJSONArray("work").getJSONObject(0).getString("authorweb");
-                    Log.i("work", "search: " + text_author_name);
-                    String text_about = j.getJSONArray("work").getJSONObject(0).getString("rgabout");
-                    Log.i("work", "about: " + text_about);
-                    String text_title = j.getJSONArray("work").getJSONObject(6).getString("titleweb");
-                    Log.i("JFL", "description :" + text_title);
+                    String text_url = j.getJSONArray("author").getJSONObject(0).getString("@uri");
+                    Log.i("JFL", "Adding to adapter url : " + text_url);
+                    String text_search = j.getJSONArray("author").getJSONObject(2).getString("authordisplay");
+                    Log.i("JFL", "search: " + text_search);
+                    String text_description = j.getJSONArray("author").getJSONObject(0).getString("spotlight");
+                    Log.i("JFL", "description :" + text_description);
                     String newLine = System.getProperty("line.separator");
-
-                    String output = new String("URL : " + text_url + newLine + newLine + "Title :"+ text_title + newLine + newLine + "Author : " + text_author_name + newLine + newLine + "Description : " + text_about);
-                    Log.i("work", "output: " + output);
+                    String output = new String("URL : " + text_url + newLine + newLine + "Author : " + text_search + newLine + newLine + "Description : " + text_description);
+                    Log.i("JFL", "output: " + output);
                     adapter.add(output);
-                    Log.i("work", "in for boucle");
                 }
 
                 adapter.notifyDataSetChanged();
@@ -88,7 +84,7 @@ public class AsyncPRJSONDataForListWork extends AsyncTask<String, Void, JSONObje
         }
         else
         {
-            Log.i("work", "The JSON data are null");
+            Log.i("JFL", "The JSON data are null");
 
         }
 

@@ -25,7 +25,7 @@ public class ListActivity extends AppCompatActivity {
         String url_mod = new String("https://reststop.randomhouse.com/resources/authors?firstName=" + firstName + "&lastName=" + lastName);
         Log.i("JFL", "url_mod: " + url_mod);
 
-        /*String url = "https://reststop.randomhouse.com/resources/authors/3446/";*/
+        String url = "https://reststop.randomhouse.com/resources/authors/3446/";
 
         AsyncPinguinRandomJSONDataForList task = new AsyncPinguinRandomJSONDataForList(adapter);
         task.execute(url_mod);

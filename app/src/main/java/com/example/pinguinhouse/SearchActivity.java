@@ -81,15 +81,18 @@ public class SearchActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                Log.i("JFL", "in OnClick function");
+                Log.i("title", "in OnClick function");
                 EditText var1 = (EditText) findViewById(R.id.inputTitle);
-                Log.i("JFL", String.valueOf(var1.getText()));
                 String output1 = String.valueOf(var1.getText());
-                Log.i("JFL", "output1 = " + output1);
+                Log.i("title", "output1 = " + output1);
+
                 Instant instant = Instant.now();
                 String output2 = instant.toString();
+
                 mydb.insertData(output1, output2);
-                Intent intent = new Intent(v.getContext(), ListActivity.class);
+
+                Intent intent = new Intent(v.getContext(), ListActivityTitle.class);
+                intent.putExtra("titleKey", output1);
                 v.getContext().startActivity(intent);
             }
         });
