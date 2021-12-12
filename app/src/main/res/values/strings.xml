@@ -27,4 +27,5 @@
     <string name="bookmark">Bookmark</string>
     <string name="textview">TextView</string>
     <string name="button">Button</string>
+    <string name="add_to_my_bookmarks">Add to my bookmarks</string>
 </resources>
