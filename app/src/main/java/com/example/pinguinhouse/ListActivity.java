@@ -17,5 +17,10 @@ public class ListActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter();
         ListView l = (ListView)findViewById(R.id.listResults);
         l.setAdapter(adapter);
+
+        String url = "https://reststop.randomhouse.com/resources/authors/3446/";
+
+        AsyncPinguinRandomJSONDataForList task = new AsyncPinguinRandomJSONDataForList(adapter);
+        task.execute(url);
     }
 }
