@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:text="@string/textview" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnBM"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="wrap_content"
@@ -20,5 +20,5 @@
         android:layout_weight="1"
         android:gravity="center_horizontal|center_vertical|fill_vertical"
         android:text="@string/add_to_my_bookmarks"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
 </LinearLayout>

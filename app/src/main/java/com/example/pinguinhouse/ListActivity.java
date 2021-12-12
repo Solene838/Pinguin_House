@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.time.Instant;
 
 public class ListActivity extends AppCompatActivity {
+
+    MySecondDatabase msdb = new MySecondDatabase(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +38,15 @@ public class ListActivity extends AppCompatActivity {
         task.execute(url_mod);
 
         l.setAdapter(adapter);
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("SG", "in ItemOnClickListener");
+                String info = new String(firstName + " " + lastName);
+
+                msdb.insertData(info);
+                Toast.makeText(ListActivity.this, "This reference is added to your bookmarks !", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

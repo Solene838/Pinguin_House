@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button b1 = (Button)findViewById(R.id.btnSearch);
 
+        Button b1 = (Button)findViewById(R.id.btnSearch);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,11 +24,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button b2 = (Button)findViewById(R.id.btnHistory);
-
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), HistoryActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        Button b3 = (Button)findViewById(R.id.btnBookmark);
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), BookmarkActivity.class);
                 v.getContext().startActivity(intent);
             }
         });
