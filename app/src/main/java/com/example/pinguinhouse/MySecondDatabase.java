@@ -63,11 +63,13 @@ public class MySecondDatabase extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
     }
-//
-//    public <data> void deleteData(data) {
-//        Log.i("JFL", "Deleting from database");
-//       // String delete = new String("DELETE from " + DATABASE_TABLE_NAME) + " WHERE " +)
-//    }
+
+    public void deleteData(long data) {
+        Log.i("JFL", "Deleting from database");
+        String delete = new String("DELETE from " + DATABASE_TABLE_NAME + " WHERE id=" + data);
+        SQLiteDatabase db = getReadableDatabase();
+        db.rawQuery(delete, null);
+    }
 
     @SuppressLint("Range")
     public void printData(ArrayAdapter<String> tableau) {
@@ -81,5 +83,13 @@ public class MySecondDatabase extends SQLiteOpenHelper {
                 tableau.add(cursor.getString(cursor.getColumnIndex(PKEY)) + "/" + cursor.getString(cursor.getColumnIndex(COL1)));
             } while (cursor.moveToPrevious());
         }
+    }
+
+    public int getId(int position) {
+        String select = new String("SELECT * from " + DATABASE_TABLE_NAME);
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(select, null);
+
+        return 0;
     }
 }

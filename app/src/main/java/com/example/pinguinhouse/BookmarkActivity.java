@@ -29,10 +29,23 @@ public class BookmarkActivity extends AppCompatActivity {
         msdb.close();
         list.setAdapter(table);
 
+        int nb = table.getCount();
+        Log.i("SG", "nb d'elements dans le tableau: " +nb);
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("SG", "item: " + parent.getItemAtPosition(position));
+                Log.i("SG", "item: " + parent.getItemIdAtPosition(position));
+                long localID = parent.getItemIdAtPosition(position);
+                Log.i("SG", "localId: " + localID);
+                long globalID = nb - localID;
+                Log.i("SG", "globalID: " + globalID);
+
+                msdb.deleteData(globalID);
+                msdb.readData();
+                msdb.printData(table);
+                msdb.close();
+                list.setAdapter(table);
             }
         });
 
