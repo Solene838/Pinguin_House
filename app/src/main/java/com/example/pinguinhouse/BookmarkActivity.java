@@ -42,10 +42,12 @@ public class BookmarkActivity extends AppCompatActivity {
                 Log.i("SG", "globalID: " + globalID);
 
                 msdb.deleteData(globalID);
+
+                ArrayAdapter<String> tableBis = new ArrayAdapter<String>(list.getContext(), R.layout.support_simple_spinner_dropdown_item);
                 msdb.readData();
-                msdb.printData(table);
+                msdb.printData(tableBis);
                 msdb.close();
-                list.setAdapter(table);
+                list.setAdapter(tableBis);
             }
         });
 

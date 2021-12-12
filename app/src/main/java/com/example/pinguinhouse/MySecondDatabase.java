@@ -65,10 +65,9 @@ public class MySecondDatabase extends SQLiteOpenHelper {
     }
 
     public void deleteData(long data) {
-        Log.i("JFL", "Deleting from database");
-        String delete = new String("DELETE from " + DATABASE_TABLE_NAME + " WHERE id=" + data);
-        SQLiteDatabase db = getReadableDatabase();
-        db.rawQuery(delete, null);
+        Log.i("SG", "Deleting from database");
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(DATABASE_TABLE_NAME, PKEY+"=?", new String[]{String.valueOf(data)});
     }
 
     @SuppressLint("Range")
