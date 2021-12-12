@@ -26,7 +26,7 @@ public class SearchActivity extends AppCompatActivity {
         ImageButton bAuthor = (ImageButton) findViewById(R.id.btnAuthorSearch);
         Log.i("JFL", "in OnCreate SearchActivity");
 
-        /*bAuthor.setOnClickListener(new View.OnClickListener() {
+        bAuthor.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
@@ -42,9 +42,8 @@ public class SearchActivity extends AppCompatActivity {
                 v.getContext().startActivity(intent);
 
             }
-        } );*/
+        } );
 
-        bAuthor.setOnClickListener(new GetTextOnClickListener(this));
 
         Button b = (Button)findViewById(R.id.button);
 
