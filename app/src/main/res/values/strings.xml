@@ -29,4 +29,6 @@
     <string name="button">Button</string>
     <string name="add_to_my_bookmarks">Add to my bookmarks</string>
     <string name="here_are_your_bookmarks">Here are your bookmarks :</string>
+    <string name="image_trop_cool">image trop cool</string>
+    <string name="image_sympa">image sympa</string>
 </resources>

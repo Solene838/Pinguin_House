@@ -15,9 +15,20 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.060000002" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="144dp"
+        android:layout_height="124dp"
+        android:contentDescription="@string/image_sympa"
+        app:layout_constraintBottom_toTopOf="@+id/listHistory"
+        app:layout_constraintStart_toEndOf="@+id/textHistory"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pinguin" />
 
     <ListView
         android:id="@+id/listHistory"
