@@ -21,7 +21,7 @@ public class AsyncPinguinRandomJSONDataForList extends AsyncTask<String, Void, J
     private MyAdapter adapter;
 
     public AsyncPinguinRandomJSONDataForList(MyAdapter myAdapter) {
-            this.adapter = adapter;
+            this.adapter = myAdapter;
     }
 
 

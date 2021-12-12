@@ -1,5 +1,6 @@
 package com.example.pinguinhouse;
 
+import android.util.Log;
 import android.view.View;
 
 import java.net.HttpURLConnection;
@@ -15,6 +16,7 @@ class GetTextOnClickListener implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
+        Log.i("JFL", "in onClick override");
         //searching Dan Brown
         String url = "https://reststop.randomhouse.com/resources/authors/3446/";
 

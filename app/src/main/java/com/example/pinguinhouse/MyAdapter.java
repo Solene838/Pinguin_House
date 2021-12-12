@@ -11,9 +11,10 @@ import java.util.Vector;
 
 public class MyAdapter extends BaseAdapter {
 
-    Vector<String> vector = new Vector<String>();
+    Vector<String> vector = new Vector<>();
 
     public void add(String url) {
+        Log.i("JFL", "in adapter add");
         vector.add(url);
     }
 
@@ -33,6 +34,7 @@ public class MyAdapter extends BaseAdapter {
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
+        Log.i("JFL", "in adapter view");
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_list, viewGroup, false);
         TextView tv = (TextView) v.findViewById(R.id.tv);
         tv.setText(vector.get(i));
