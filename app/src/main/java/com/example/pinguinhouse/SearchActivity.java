@@ -45,19 +45,6 @@ public class SearchActivity extends AppCompatActivity {
         } );
 
 
-        Button b = (Button)findViewById(R.id.button);
-
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ListActivity.class);
-                v.getContext().startActivity(intent);
-            }
-        });
-
-
-
-
         ImageButton bWork = (ImageButton)findViewById(R.id.btnWorkSearch);
         bWork.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
